@@ -1,0 +1,13 @@
+<launch>
+    <arg name="in_dir" default=""/>
+    <arg name="dataset_dir" default=""/>
+    <arg name="bag_dir" default=""/>
+    <arg name="dt" default="5.0"/>
+    <arg name="topic" default=""/>
+    <node pkg="bag_to_dataset" type="pointcloud_to_pcd_node" name="remove_nan" output="screen" args="$(arg in_dir)">
+        <param name="dataset_dir" value="$(arg dataset_dir)"/>
+        <param name="bag_dir" value="$(arg bag_dir)"/>
+        <param name="topic" value="$(arg topic)"/>
+        <param name="dt" value="$(arg dt)"/>
+    </node>
+</launch>
